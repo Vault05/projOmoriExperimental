@@ -3,6 +3,11 @@ import {Routes, Route, Link} from 'react-router'
 import './App.css'
 
 function Main(){
+  
+
+}
+
+function Header(){
   return (
   <header class="geralHeader">
             <div class="headerLogo">
@@ -26,6 +31,7 @@ function App() {
   return (
     <>
     <Main />
+    <Header />
     </>
   )
 }
