@@ -1,0 +1,20 @@
+personagens - Bruno
+bestiário - Marco / Gustavo
+conquistas - Bruno
+mecânicas/batalha
+rotas
+mapa/locais- Murilo
+itens - Marco / Gustavo
+missões - Marco / Gustavo
+
+projInt2.html
+-Index.html
+-Personagens
+-Bestiário
+-Conquista
+-História 
+-Rotas
+-Mapa / Locais
+-Mecânicas e batalha
+-Itens
+-Missões
