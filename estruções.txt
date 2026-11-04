@@ -1,2 +1,0 @@
-Quando criar uma página em jsx, não se esqueça de importar o header
-import StandartP from './standartP.jsx';

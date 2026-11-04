@@ -1,0 +1,3 @@
+Quando criar uma página em jsx, não se esqueça de importar o header
+import StandartP from './standartP.jsx';
+para o header funcione direito com as imagens, a imagem headspaceBG.jpg deve ser copiada para a pasta 'public', enquanto a imagem omoriLogo.png deve estar normalmente em assets
