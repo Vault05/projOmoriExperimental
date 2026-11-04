@@ -1,17 +1,27 @@
 import { useState } from 'react'
 import {Routes, Route, Link} from 'react-router'
+import header from './assets/headspaceBG.jpg'
+import logo from './assets/omoriLogo.png'
 import './App.css'
 
-function Main(){
-  
+function Cards(){
 
+}
+
+function Main(){
+  return(
+  <>
+  <Header />
+  <h1>ITENS</h1>
+  </>
+  )
 }
 
 function Header(){
   return (
-  <header class="geralHeader">
-            <div class="headerLogo">
-                <a href="index.html"><img src="src/assets/omoriLogo.png" height="100px" /></a>
+    <header className="geralHeader">
+            <div className="headerLogo">
+                <Link to='/'><img src={logo} height="100px" /></Link>
             </div>
 <nav class="geralNav">
                 <a href="#">Personagens</a>
@@ -27,13 +37,12 @@ function Header(){
   )
 }
 
-function App() {
+function Itens() {
   return (
     <>
     <Main />
-    <Header />
     </>
   )
 }
 
-export default App
+export default Itens
