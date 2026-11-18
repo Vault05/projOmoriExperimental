@@ -8,8 +8,8 @@ itens - Marco / Gustavo
 missões - Marco / Gustavo
 
 projInt2.html
--Index.html
--Personagens
+-Index.html *Concluido*
+-Personagens *Concluido*
 -Bestiário
 -Conquista
 -História 
@@ -18,3 +18,5 @@ projInt2.html
 -Mecânicas e batalha
 -Itens
 -Missões
+
+Murilo é vagabundo
