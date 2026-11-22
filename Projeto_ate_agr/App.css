@@ -1,0 +1,659 @@
+/* Sumário
+:root.......... l7
+General........ l36
+Index.......... l98
+Characters..... l208
+Achievements... l339
+*/
+:root { /*colors*/
+    --white: #ffffff;
+    --black: #000000;
+    --light-gray: #f5f5f5;
+    --dark-purple: #2d1b3d;
+    --soft-purple: #6b4f7c;
+    --red-accent: #c0392b;
+    --yellow-light: #f9e79f;
+    --blue-dark: #1a3c4a;
+    --bg: #faf8f3;
+    --paper: #ffffff;
+    --ink: #1c1c1c;
+    --ink-soft: #4a4a46;
+    --red: #b7282d;
+    --teal: #3e7c82;
+    --yellow: #e3b23c;
+    --line: #1c1c1c;
+    --font-display: 'Permanent Marker', cursive;
+    --font-body: 'Work Sans', sans-serif;
+    --handwritten: 'Segoe Script';
+    /**/
+    --headspace-lime: #93f0e4;
+    --headspace-blue: #101dc6;
+    --headspace-pink: #fec2fc;
+    --headspace-green: #20fcef;
+    --headspace-shadow: #101dc6;
+    --headspace-purple: #6c0fff;
+}
+/*General*/
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.geralHeader {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/headspaceBG.jpg);
+}
+.geralHeader a{line-height: 0;}
+.geralNav {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.95rem;
+    gap: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.8rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.75); 
+    backdrop-filter: blur(2px); 
+    margin-top: -30px;
+}
+.geralNav a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--white);
+}
+.geralNav a:hover { color: var(--headspace-purple); }
+body {
+    background: var(--bg);
+}
+.btnContainer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -4rem;
+    transform: translateY(-50%);
+    width: 5rem;
+    height: 5rem;
+    background-image: url('/hoverHand.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.15s cubic-bezier(0.25, 1, 0.5, 1), transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.btnContainer:hover::before {
+    opacity: 1;
+    transform: translateY(-10%) translateX(-4px);
+}
+.btn {
+    background-color: var(--ink);
+    color: var(--white);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+/*General*/
+/*Index*/
+.whiteSpaceBody {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+.omoriScreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topLink.linkLeft {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 10;
+}
+.bulbImg {
+    width: 85px;
+    height: auto;
+    display: block;
+}
+.topLink.linkRight {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+}
+.groupImg {
+    width: 160px;
+    height: auto;
+}
+.indexTitle {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+.titleImg {
+    width: 480px;
+    max-width: 70vw;
+    height: auto;
+}
+.omoriCharacter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 0;
+    z-index: 2;
+}
+.omoriCharacter img {
+    display: block;
+    height: 75vh;
+    width: auto;
+}
+.omoriScreen .cardButtons {
+    display: flex;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+    z-index: 10;
+    margin-top: 1.5rem;
+}
+.btnContainer {
+    position: relative;
+    border: var(--ink, #1c1c1c) solid 3px;
+    padding: 4px;
+    background-color: #ffffff;
+}
+.whiteSpaceBody .btnContainer::before { width: 10rem; height: 10rem; left: -8.5rem;}
+.btnContainer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -4.5rem;
+    transform: translateY(-50%);
+    background-image: url('/hoverHand.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.2s ease, left 0.2s ease, transform 0.2s ease;
+}
+.btnContainer:hover::before {
+    opacity: 1;
+    transform: translateY(-50%) translateX(6px);
+}
+.omoriScreen .btn {
+    font-family: 'Courier New', monospace;
+    background-color: var(--ink);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 250px;
+    text-align: center;
+}/* --- Estilos do Modal Flutuante (Estilo Menu de Jogo) --- */
+.expandLinksOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.expandLinksBox {
+    background-color: var(--paper, #ffffff);
+    border: 4px solid var(--ink, #1c1c1c);
+    width: 380px;
+    max-width: 90vw;
+    padding: 20px;
+    box-shadow: 8px 8px 0px var(--ink, #1c1c1c);
+    animation: modalPop 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    font-family: 'Courier New', monospace;
+}
+@keyframes modalPop {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.expandLinksBoxHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--ink, #1c1c1c);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.expandLinksBoxHeader h3 {
+    font-size: 1.4rem;
+    color: var(--ink);
+    letter-spacing: 1px;
+}
+.expandLinksCloseBtn {
+    background-color: var(--ink);
+    color: var(--white);
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.expandLinksCloseBtn:hover {
+    background-color: var(--red, #b7282d);
+}
+.expandLinksList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.expandLinksItem {
+    display: block;
+    background-color: var(--light-gray, #f5f5f5);
+    border: 2px solid var(--ink, #1c1c1c);
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+.expandLinksItem:hover {
+    background-color: var(--ink);
+    color: var(--white);
+    transform: translateX(5px);
+}
+/*Characters*/
+.charactersCatalog {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.gridCharacters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem;
+    width: 80%;
+}
+.itemCharacter {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border: var(--ink) solid 2px; 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.itemCharacter:nth-child(3n + 1) {transform: rotate(0.9deg);}
+.itemCharacter:nth-child(3n + 2) {transform: rotate(-0.6deg);}
+.itemCharacter:nth-child(3n + 3) {transform: rotate(0.3deg);}
+.itemCharacter:hover {transform: rotate(0) scale(1.02)}
+.itemCharactersContent {
+    display: flex;
+    flex-direction: column;
+}
+.charactersCatalog .cardButtons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 5rem;
+    left: 50%;
+}
+.btnGrid {
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.itemCharactersContent h2 {margin-bottom: 1rem;}
+.itemCharactersContent p, .spoilerSection p .extraContent p {
+    font-size: 1.1rem;
+    letter-spacing: 0.025rem;
+}
+.spoilerSection {
+    width: 55rem;
+    margin-top: 15px;
+    background-color: rgba(178, 34, 34, 0.226);
+    border-left: 4px solid #b22222;
+    padding: 15px;
+    border-radius: 0.4rem;
+}
+.extraContent {
+    width: 55rem;
+    margin-top: 15px;
+    border-top: 1px dashed #2c3545;
+    padding-top: 15px;
+}
+.btnContainer { 
+    margin-left: 2.5rem;
+    position: relative;
+    border: var(--ink) solid 2px;
+    padding: 0.25rem;
+    width: fit-content;
+    background-color: var(--white);
+}
+.sidebarCharacters {
+    display: flex;
+    flex: 0 0 200px;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    position: sticky;
+    background-color: transparent;
+    min-height: calc(100vh - 111px);
+    max-height: calc(100vh - 40px);
+    width: 40%;
+    padding: 15px;
+    border-radius: 0;
+    border: 1px solid #202e3f;
+    border-top: none;
+    padding: 5px;
+    align-items: flex-start;
+    gap: 30px;
+}
+.sidebarCharacters h3 {
+    margin-top: 0.2rem;
+    border-bottom: 1px solid black;
+}
+.sidebarCharacters::-webkit-scrollbar { width: 6px; }
+.sidebarCharacters a {
+    font-size: 1.22rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: opacity 0.3s ease, filter 0.3s ease, border-color 0.3s, background-color 0.3s ease;
+    margin-left: 5px;
+    color: var(--headspace-purple);
+}
+.sidebarCharacters a:hover {
+    text-decoration: underline;
+}
+.filterButtons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+}
+.filterButton {
+    padding: 6px 12px;
+    border: 2px solid #292323;
+    border-radius: 4px;
+    background-color: #f7f4ef;
+    color: #292323;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+.filterButton:hover {
+    background-color: #e7d9ff;
+    transform: translateY(-1px);
+}
+.filterButton.active {
+    background-color: #39233f;
+    color: white;
+}
+.filterButton:focus-visible {
+    outline: 3px solid #9270c9;
+    outline-offset: 2px;
+}
+/*Characters*/
+/*Achievements*/
+.achievementsMain {
+    width: 100%;
+    min-height: calc(100vh - 111px);
+    margin: 0 auto;
+    background: radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, 0.45), transparent 70%), var(--bg);
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+.contentAchievements {
+    text-align: center;
+    width: 100%;
+}
+.contentAchievements h1 {
+    font-family: 'Courier New', monospace;
+    font-size: 2.2rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+.gridAchievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    border: 4px solid var(--ink);
+    border-radius: 4px;
+    background: var(--paper);
+}
+.achvsBorder {
+    aspect-ratio: 1 / 1;
+    width: 140px;
+    background-color: black;
+    padding: 4px;
+    border-radius: 12px;
+    border: 2px solid #3b0764;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    box-sizing: border-box;
+    transition: 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), 0.3s ease;
+}
+.achvsInner {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    box-sizing: border-box;
+}
+.achvsImgWrapper {
+    background-color: #ffffff;
+    padding: 1.2px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.achvsImg {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+}
+.achvsBorder:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    border-color: var(--headspace-purple);
+}
+.achvsTitle {
+    color: #ffffff;
+    font-family: monospace, sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+.lockedContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.lockedIcon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+/* Gradientes de raridade estilo Headspace */
+.achvsBorder.gold { border-color: gold; }
+.achvsBorder.silver {border-color:  #b0c4de;         }
+.bronze { background: linear-gradient(145deg, #cd7f32, #8b4513); color: #fff; }
+/* --- Estilos da Janela Modal (Achievement Modal) --- */
+.windowBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeInModal 0.2s ease-out;
+}
+
+.achvCardWindow {
+    background-color: var(--paper, #ffffff);
+    border: 4px solid var(--ink, #1c1c1c);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Bordas temáticas do modal herdadas da raridade */
+.achvCardWindow.gold { border-color: gold; }
+.achvCardWindow.silver { border-color: #b0c4de; }
+.achvCardWindow.lockedAchvs { border-color: #555555; }
+
+.windowCloseBtn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--ink, #1c1c1c);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.windowCloseBtn:hover {
+    background: var(--red, #b7282d);
+}
+
+.windowHeader {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    border-bottom: 2px dashed #ddd;
+    padding-bottom: 1rem;
+}
+
+.windowImgBox {
+    width: 80px;
+    height: 80px;
+    background: #000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid var(--ink);
+}
+
+.windowImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.windowTitleArea h2 {
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-top: 4px;
+}
+
+.windowBadge {
+    font-size: 0.75rem;
+    background: var(--ink);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.windowBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--ink-soft, #4a4a46);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.windowStatsGrid {
+    display: flex;
+    gap: 1rem;
+    background: var(--light-gray, #f5f5f5);
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.windowStatItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.statValue {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--ink);
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/*Achievements*/
