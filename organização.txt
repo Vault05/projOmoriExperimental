@@ -1,22 +1,24 @@
 personagens - Bruno
-bestiário - Marco / Gustavo
+bestiário - Marco
 conquistas - Bruno
 mecânicas/batalha
 rotas
 mapa/locais- Murilo
-itens - Marco / Gustavo
-missões - Marco / Gustavo
+itens - Brayan
+missões - Gustavo
 
 projInt2.html
--Index.html *Concluido*
--Personagens *Concluido*
--Bestiário
--Conquista
--História 
--Rotas
--Mapa / Locais
--Mecânicas e batalha
--Itens
--Missões
-
-Murilo é vagabundo
+°Index.html...............*Concluido*
+Início:
+-História.................*Não Designado* 
+-Rotas....................*Não Designado*
+-Missões..................*Sendo Realizado*
+°Progresso ou Acervo:
+-Conquista................*Concluido*
+-Mapa / Locais............*Sem Notícias*
+-Itens....................*Sem Notícias*
+-Personagens..............*Concluido*
+-Bestiário................*Sendo Realizado*
+°Extras:
+-Mecânicas e batalha......*Não Designado*
+-Fórum....................*Não Designado*
